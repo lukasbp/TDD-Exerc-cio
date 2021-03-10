@@ -1,11 +1,9 @@
-const Gerador = require('../lib/gerador');
-const Objeto = require('validate');
+const Generator = require('../lib/gerador');
+const Objeto = require('../node_modules/validate');
 const { toBeDeepCloseTo, ToMatchCloseTo } = require('jest-matcher-deep-close-to');
 const { validate } = require('@babel/types');
 
-expect.extend({ toBeDeepCloseTo, ToMatchCloseTo });
-
-const Gerador = new Gerador();
+const Gerador = new Generator();
 
 const Cliente = new Objeto({
     Nome: String,
@@ -34,32 +32,39 @@ describe('Teste geral', () => {
     })
     test('de R$ 1000,1 até R$ 5000', () => {
         const Cliente = {
-            Nome: 'João',
+            Nome: {
+                presence: true,
+                exclusion: {
+                    within: ['Josue'],
+                    message: "apenas letras permitidas"
+                }
+            },
             Salario: 2000,
-            Idade: 30,
-            valorDoEmprestimo: 4500
+            Idade: 24,
+            valorDoEmprestimo: 4000
         }
 
-        const Invalido = Gerador.validate(Cliente)
 
-        expect(Invalido).toHaveLength(0)
+        validate({Nome: 'Josue'}, Cliente);
 
-        const { Faixa, Total, Emprestimo } = gerador.GerarProposta(Cliente)
 
     })
     test('de R$ 5000 para cima', () => {
         const Cliente = {
-            Nome: 'Matias',
-            Salario: 10000,
-            Idade: 45,
+            Nome: {
+                presence: true,
+                exclusion: {
+                    within: ['Matias'],
+                    message: "apenas letras permitidas"
+                }
+            },
+            Salario: 11500,
+            Idade: 40,
             valorDoEmprestimo: 25000
         }
 
-        const Invalido = Gerador.validate(Cliente)
 
-        expect(Invalido).toHaveLength(0)
-
-        const { Faixa, Total, Emprestimo } = gerador.GerarProposta(Cliente)
+        validate({Nome: 'Matias'}, Cliente);
 
     })
 })
