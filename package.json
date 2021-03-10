@@ -1,0 +1,19 @@
+{
+  "name": "tdd-exerc-cio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gerador.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukasbp/TDD-Exerc-cio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lukasbp/TDD-Exerc-cio/issues"
+  },
+  "homepage": "https://github.com/lukasbp/TDD-Exerc-cio#readme"
+}
