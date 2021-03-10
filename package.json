@@ -4,7 +4,7 @@
   "description": "",
   "main": "gerador.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,8 @@
   "homepage": "https://github.com/lukasbp/TDD-Exerc-cio#readme",
   "dependencies": {
     "jest-matcher-deep-close-to": "^2.0.1"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
   }
 }
