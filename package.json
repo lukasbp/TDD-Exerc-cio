@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/lukasbp/TDD-Exerc-cio/issues"
   },
-  "homepage": "https://github.com/lukasbp/TDD-Exerc-cio#readme"
+  "homepage": "https://github.com/lukasbp/TDD-Exerc-cio#readme",
+  "dependencies": {
+    "jest-matcher-deep-close-to": "^2.0.1"
+  }
 }
